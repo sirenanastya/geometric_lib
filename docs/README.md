@@ -1,50 +1,27 @@
 # geometric_lib
 
-Библиотека на Python для вычисления площади и периметра плоских фигур: круга, квадрата, прямоугольника и треугольника.
+[![linux](https://img.shields.io/badge/linux-passing-34D058?style=flat&logo=linux&logoColor=white)](https://github.com/sirenanastya/geometric_lib/actions/workflows/linux.yml)
+[![macos](https://img.shields.io/badge/macos-passing-34D058?style=flat&logo=apple&logoColor=white)](https://github.com/sirenanastya/geometric_lib/actions/workflows/macos.yml)
+[![windows](https://img.shields.io/badge/windows-passing-34D058?style=flat&logo=windows&logoColor=white)](https://github.com/sirenanastya/geometric_lib/actions/workflows/windows.yml)
+[![python](https://img.shields.io/badge/python-3-blue.svg)](https://www.python.org/)
 
-## Описание
-
-Каждая фигура вынесена в отдельный модуль. В модуле две функции:
-
-- `area` — площадь;
-- `perimeter` — периметр (для круга — длина окружности).
-
-Сторонние пакеты не используются. Для числа π модуль круга обращается к `math.pi`.
-
-## Требования
-
-- Python 3
-
-## Структура проекта
-
-```text
-geometric_lib/
-├── circle.py
-├── square.py
-├── rectangle.py
-├── triangle.py
-└── docs/
-    └── README.md
-```
-
-| Файл | Фигура |
-| --- | --- |
-| `circle.py` | круг |
-| `square.py` | квадрат |
-| `rectangle.py` | прямоугольник |
-| `triangle.py` | треугольник |
-| `docs/README.md` | документация |
+Библиотека для вычисления площади и периметра плоских фигур. У каждой фигуры свой модуль и две функции: `area` и `perimeter`. Сторонние пакеты не нужны. Число π берётся из `math.pi`.
 
 ## Установка
 
-Отдельная установка не требуется. Склонируйте репозиторий и запускайте код из корня проекта, чтобы импорт модулей находил файлы `circle.py`, `square.py`, `rectangle.py` и `triangle.py`.
+Пакет не выкладывается в PyPI. Склонируйте репозиторий и запускайте примеры из его корня:
 
-## Использование
+```bash
+git clone https://github.com/sirenanastya/geometric_lib.git
+cd geometric_lib
+```
+
+## Пример
 
 ```python
 import circle
-import square
 import rectangle
+import square
 import triangle
 
 print(circle.area(3))
@@ -57,21 +34,27 @@ print(triangle.area(4, 3))
 print(triangle.perimeter(3, 4, 5))
 ```
 
-Аргументы всех функций — числа `int` или `float`. Проверки на ноль, отрицательные значения и нечисловой ввод нет: такие аргументы передаются в формулу как есть.
+Аргументы — числа `int` или `float`. Ноль, отрицательные числа и посторонние типы библиотека не проверяет.
 
 ## Модули
 
-### circle — круг
+| Модуль | Фигура | Площадь | Периметр |
+| --- | --- | --- | --- |
+| `circle` | круг | S = πr² | P = 2πr |
+| `square` | квадрат | S = a² | P = 4a |
+| `rectangle` | прямоугольник | S = ab | P = 2(a + b) |
+| `triangle` | треугольник | S = ah / 2 | P = a + b + c |
 
-#### area(r)
+Для треугольника площадь считается по основанию и высоте, периметр — по трём сторонам.
 
-Возвращает площадь круга.
+## Справка
 
-| | |
-| --- | --- |
-| Параметр | `r` (`int` или `float`) — радиус |
-| Возвращаемое значение | `float` — площадь |
-| Формула | S = πr² |
+### `circle.area(r)`
+
+Площадь круга.
+
+- **r** (`int` или `float`) — радиус.
+- **Возвращает** `float`. Формула: S = πr².
 
 ```python
 import circle
@@ -79,15 +62,12 @@ import circle
 circle.area(3)  # 28.274333882308138
 ```
 
-#### perimeter(r)
+### `circle.perimeter(r)`
 
-Возвращает длину окружности.
+Длина окружности.
 
-| | |
-| --- | --- |
-| Параметр | `r` (`int` или `float`) — радиус |
-| Возвращаемое значение | `float` — длина окружности |
-| Формула | P = 2πr |
+- **r** (`int` или `float`) — радиус.
+- **Возвращает** `float`. Формула: P = 2πr.
 
 ```python
 import circle
@@ -95,17 +75,12 @@ import circle
 circle.perimeter(3)  # 18.84955592153876
 ```
 
-### square — квадрат
+### `square.area(a)`
 
-#### area(a)
+Площадь квадрата.
 
-Возвращает площадь квадрата.
-
-| | |
-| --- | --- |
-| Параметр | `a` (`int` или `float`) — сторона |
-| Возвращаемое значение | `int` или `float` — площадь |
-| Формула | S = a² |
+- **a** (`int` или `float`) — сторона.
+- **Возвращает** площадь. Формула: S = a².
 
 ```python
 import square
@@ -113,15 +88,12 @@ import square
 square.area(5)  # 25
 ```
 
-#### perimeter(a)
+### `square.perimeter(a)`
 
-Возвращает периметр квадрата.
+Периметр квадрата.
 
-| | |
-| --- | --- |
-| Параметр | `a` (`int` или `float`) — сторона |
-| Возвращаемое значение | `int` или `float` — периметр |
-| Формула | P = 4a |
+- **a** (`int` или `float`) — сторона.
+- **Возвращает** периметр. Формула: P = 4a.
 
 ```python
 import square
@@ -129,17 +101,12 @@ import square
 square.perimeter(5)  # 20
 ```
 
-### rectangle — прямоугольник
+### `rectangle.area(a, b)`
 
-#### area(a, b)
+Площадь прямоугольника.
 
-Возвращает площадь прямоугольника.
-
-| | |
-| --- | --- |
-| Параметры | `a`, `b` (`int` или `float`) — стороны |
-| Возвращаемое значение | `int` или `float` — площадь |
-| Формула | S = ab |
+- **a**, **b** (`int` или `float`) — стороны.
+- **Возвращает** площадь. Формула: S = ab.
 
 ```python
 import rectangle
@@ -147,15 +114,12 @@ import rectangle
 rectangle.area(5, 3)  # 15
 ```
 
-#### perimeter(a, b)
+### `rectangle.perimeter(a, b)`
 
-Возвращает периметр прямоугольника.
+Периметр прямоугольника.
 
-| | |
-| --- | --- |
-| Параметры | `a`, `b` (`int` или `float`) — стороны |
-| Возвращаемое значение | `int` или `float` — периметр |
-| Формула | P = 2(a + b) |
+- **a**, **b** (`int` или `float`) — стороны.
+- **Возвращает** периметр. Формула: P = 2(a + b).
 
 ```python
 import rectangle
@@ -163,17 +127,13 @@ import rectangle
 rectangle.perimeter(5, 3)  # 16
 ```
 
-### triangle — треугольник
+### `triangle.area(a, h)`
 
-#### area(a, h)
+Площадь треугольника.
 
-Возвращает площадь треугольника по основанию и высоте.
-
-| | |
-| --- | --- |
-| Параметры | `a` (`int` или `float`) — основание; `h` (`int` или `float`) — высота, проведённая к этому основанию |
-| Возвращаемое значение | `float` — площадь |
-| Формула | S = ah / 2 |
+- **a** (`int` или `float`) — основание.
+- **h** (`int` или `float`) — высота, проведённая к этому основанию.
+- **Возвращает** `float`. Формула: S = ah / 2.
 
 ```python
 import triangle
@@ -181,15 +141,12 @@ import triangle
 triangle.area(4, 3)  # 6.0
 ```
 
-#### perimeter(a, b, c)
+### `triangle.perimeter(a, b, c)`
 
-Возвращает периметр треугольника по трём сторонам.
+Периметр треугольника.
 
-| | |
-| --- | --- |
-| Параметры | `a`, `b`, `c` (`int` или `float`) — стороны |
-| Возвращаемое значение | `int` или `float` — периметр |
-| Формула | P = a + b + c |
+- **a**, **b**, **c** (`int` или `float`) — стороны.
+- **Возвращает** периметр. Формула: P = a + b + c.
 
 ```python
 import triangle
@@ -197,11 +154,26 @@ import triangle
 triangle.perimeter(3, 4, 5)  # 12
 ```
 
+## Структура
+
+```text
+geometric_lib/
+├── circle.py
+├── square.py
+├── rectangle.py
+├── triangle.py
+├── tests/
+│   └── test_figures.py
+├── .github/
+│   └── workflows/
+└── docs/
+    └── README.md
+```
+
 ## История изменений
 
-- 70509d1 Add rectangle, triangle and project documentation
-- 28f8c82 Commit hash history add to docs
-- bc70c33 Documentation added
-- d078c8d L-03: Docs added
-- 8ba9aeb L-03: Circle and square added
-
+- `70509d1` — добавлены прямоугольник, треугольник и документация
+- `28f8c82` — в документацию добавлена история коммитов
+- `bc70c33` — добавлена документация
+- `d078c8d` — добавлено описание формул
+- `8ba9aeb` — добавлены круг и квадрат
