@@ -162,8 +162,6 @@ geometric_lib/
 ├── square.py
 ├── rectangle.py
 ├── triangle.py
-├── tests/
-│   └── test_figures.py
 ├── .github/
 │   └── workflows/
 └── docs/
