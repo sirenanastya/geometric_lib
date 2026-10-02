@@ -11,7 +11,7 @@
 
 Модули лежат в корне проекта. Запускайте примеры из этой папки:
 
-```python
+```python   
 import circle
 import square
 
@@ -53,4 +53,11 @@ import square
 
 square.area(5)       # 25
 square.perimeter(5)  # 20
+```
+## История изменений
+```
+bc70c33 (HEAD -> main) Documentation added
+d078c8d (origin/main, origin/HEAD) L-03: Docs added
+8ba9aeb L-03: Circle and square added
+
 ```
