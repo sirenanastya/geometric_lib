@@ -199,6 +199,9 @@ triangle.perimeter(3, 4, 5)  # 12
 
 ## История изменений
 
-- Добавлены модули круга и квадрата.
-- Добавлена документация библиотеки.
-- Добавлены модули прямоугольника и треугольника.
+- 70509d1 Add rectangle, triangle and project documentation
+- 28f8c82 Commit hash history add to docs
+- bc70c33 Documentation added
+- d078c8d L-03: Docs added
+- 8ba9aeb L-03: Circle and square added
+
