@@ -7,6 +7,23 @@
 
 Библиотека для вычисления площади и периметра плоских фигур. У каждой фигуры свой модуль и две функции: `area` и `perimeter`. Сторонние пакеты не нужны. Число π берётся из `math.pi`.
 
+## Содержание
+
+- [Установка](#установка)
+- [Пример](#пример)
+- [Модули](#модули)
+- [Справка](#справка)
+  - [`circle.area(r)`](#circlearear)
+  - [`circle.perimeter(r)`](#circleperimeterr)
+  - [`square.area(a)`](#squareareaa)
+  - [`square.perimeter(a)`](#squareperimetera)
+  - [`rectangle.area(a, b)`](#rectangleareaa-b)
+  - [`rectangle.perimeter(a, b)`](#rectangleperimetera-b)
+  - [`triangle.area(a, h)`](#triangleareaa-h)
+  - [`triangle.perimeter(a, b, c)`](#triangleperimetera-b-c)
+- [Структура](#структура)
+- [История изменений](#история-изменений)
+
 ## Установка
 
 Пакет не выкладывается в PyPI. Склонируйте репозиторий и запускайте примеры из его корня:
