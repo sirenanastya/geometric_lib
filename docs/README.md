@@ -1,8 +1,5 @@
 # geometric_lib
 
-[![linux](https://img.shields.io/badge/linux-passing-34D058?style=flat&logo=linux&logoColor=white)](https://github.com/sirenanastya/geometric_lib/actions/workflows/linux.yml)
-[![macos](https://img.shields.io/badge/macos-passing-34D058?style=flat&logo=apple&logoColor=white)](https://github.com/sirenanastya/geometric_lib/actions/workflows/macos.yml)
-[![windows](https://img.shields.io/badge/windows-passing-34D058?style=flat&logo=windows&logoColor=white)](https://github.com/sirenanastya/geometric_lib/actions/workflows/windows.yml)
 [![python](https://img.shields.io/badge/python-3-blue.svg)](https://www.python.org/)
 
 Библиотека для вычисления площади и периметра плоских фигур. У каждой фигуры свой модуль и две функции: `area` и `perimeter`. Сторонние пакеты не нужны. Число π берётся из `math.pi`.
